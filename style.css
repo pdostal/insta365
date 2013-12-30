@@ -25,9 +25,9 @@ h1.navbar-brand a { color: #fff; }
 #main .container { padding-top: 30px; }
 
 article.col-md-4 { margin-bottom: 30px; }
-article .title { border-top-right-radius: 5px; border-top-left-radius: 5px; background: rgba(0,0,0,0.75); color: #fff; display: block; width: 100%; font-size: 12pt; height: 22px; margin: 0px; padding: 1.5% 1.5% 1.5% 1.5%; }
+article .title { border-top-right-radius: 5px; border-top-left-radius: 5px; background: rgba(0,0,0,0.75); color: #fff; display: block; width: 100%; font-size: 12pt; height: 22px; margin: 0px; padding: 0% 1.5% 1.5% 1.5%; }
 article .content { border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; background: rgba(0,0,0,0.75); position: relative; width: 100%; padding: 0px 1.5% 1.5% 1.5%; }
-article .content img:first-child { width: 100%; min-height: 275px; height: 275px; }
+article .content img:first-child { width: 100%; min-height: 275px; height: 100%; }
 
 footer { text-align: center; margin-bottom: 15px; }
 
