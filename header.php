@@ -18,4 +18,14 @@
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css" media="all" />
 	</head>
 	<body>
-  		<h1><a href="<?php bloginfo('wpurl'); ?>"><?php bloginfo('name'); ?></a></h1>
+	<nav id='header' class='navbar navbar-default navbar-fixed-top navbar-inner' role='navigation'>
+      <header class='navbar-header'>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <h1 class='navbar-brand'><a href="<?php bloginfo('wpurl'); ?>"><?php bloginfo('name'); ?></a></h1>
+      </header>
+	</nav>
