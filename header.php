@@ -8,7 +8,6 @@
 		<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS feed" href="<?php bloginfo('rss2_url'); ?>" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="<?php bloginfo('template_url'); ?>/bootstrap.min.css" rel="stylesheet">
-		<script src="https://code.jquery.com/jquery.js"></script>
 		<script src="<?php bloginfo('template_url'); ?>/bootstrap.min.js"></script>
 		<!--[if lt IE 9]>
 			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>

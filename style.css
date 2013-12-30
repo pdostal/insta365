@@ -19,7 +19,7 @@ body { padding-top: 30px; background: url('background.png'); }
 .widget .navbar .navbar-inner a.btn { margin-top: 2px; }
 h1.navbar-brand { margin: 0px; padding: 5px 25px 5px 25px; }
 h1.navbar-brand a { color: #fff; }
-.navbar-default { background: url('background.png'); }
+.navbar-default { background: transparent; border-color: transparent; }
 .navbar-header { background: rgba(0,0,0,0.75); }
 
 #main .container { padding-top: 30px; }
