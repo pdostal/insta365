@@ -10,3 +10,12 @@ Tags:
 
 /* Begin Typography & Colors */
 
+#main { background: url('background.png'); padding-top: 30px; }
+
+article.col-md-4 { margin-bottom: 30px; }
+article .title { background: rgba(0,0,0,0.75); color: #fff; display: block; width: 100%; font-size: 12pt; height: 22px; margin: 0px; padding: 1.5% 1.5% 1.5% 1.5%; }
+article .content { background: rgba(0,0,0,0.75); position: relative; width: 100%; padding: 0px 1.5% 1.5% 1.5%; }
+article .content img:first-child { width: 100%; min-height: 275px; }
+
+footer { text-align: center; }
+.clear { clear: both; }
