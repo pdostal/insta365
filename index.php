@@ -1,24 +1,17 @@
 <?php
 	include('header.php');
-	include('sidebar.php');
 ?>
 <section id="main">
-<?php
-	if (have_posts()) {
-?>
-	<ul id="postsindex">
-	<?php
-		while (have_posts()) {
-			the_post();
-	?>
-		<li id="post<?php echo the_ID(); ?>">
-				<span class="date"><?php the_time('l, F Y'); ?></span>
-				<h1 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-				<div class="content"><?php echo strip_tags(get_the_excerpt()); ?></div>
-		</li>
-	<?php } ?>
-	</ul>
-<?php } ?>
+<?php if (have_posts()) { while (have_posts()) { the_post(); ?>
+	<article class="container">
+		<h1 class="title"><?php the_title(); ?></h1>
+		<div class="content"><?php the_content(); ?></div>
+		<div class="date"><?php the_time('j. n. Y') ?></div>
+		<div class="clear"></div>
+		<div class="category"><span class="desc">Kategorie: </span><?php the_category(', '); ?></div>
+		<div class="tags"><span class="desc">Štítky: </span><?php the_tags('', ', ', ''); ?></div>
+	</article>
+<?php } } ?>
 </section>
 <?php
 	include('footer.php');

@@ -1,4 +1,4 @@
-		<footer>
+		<footer class="container">
 			<span class="wordpressfooter">
 				Powered by <a href="http://wordpress.org/">Wordpress</a>
 			</span>
@@ -6,7 +6,7 @@
 				&copy; <a itemprop="url" href="http://pdostal.cz/">Pavel Dostál</a>
 				(<a href="mailto:pdostal@pdostal.cz">pdostal@pdostal.cz</a>)
 			</span>
-			<?php wp_footer(); ?>
 		</footer>
+		<?php wp_footer(); ?>
 	</body>
 </html>
