@@ -26,10 +26,15 @@ h1.navbar-brand a { color: #fff; }
 
 article.col-md-4 { margin-bottom: 30px; }
 article .title { border-top-right-radius: 5px; border-top-left-radius: 5px; background: rgba(0,0,0,0.75); display: block; width: 100%; font-size: 12pt; height: 22px; margin: 0px; padding: 0% 1.5% 1.5% 1.5%; }
-article .title a { color: #fff; }
-article .content { border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; background: rgba(0,0,0,0.75); position: relative; width: 100%; padding: 0px 1.5% 1.5% 1.5%; }
+article .title,article .title a { color: #fff; }
+article .content { border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; background: rgba(0,0,0,0.75); position: relative; width: 100%; }
+article.col-md-4 .content { padding: 0px 1.5% 1.5% 1.5%; }
+article.single .content { padding: 0px 1.5% 20px 1.5%; }
 article .content img:first-child { width: 100%; min-height: 275px; height: 100%; }
+article .tags { position: relative; top: -18px; width: 100%; color: #fff; padding: 0% 1.5%; }
+article .tags a { color: #fff; font-weight: bold; }
 
 footer { text-align: center; margin-bottom: 15px; }
+footer a { color: #000; font-weight: bold; }
 
 .clear { clear: both; }
