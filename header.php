@@ -23,13 +23,10 @@
 	</head>
 	<body>
 	<nav id='header' class='navbar navbar-default navbar-fixed-top navbar-inner' role='navigation'>
-      <header class='navbar-header'>
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <h1 class='navbar-brand'><a href="<?php bloginfo('wpurl'); ?>"><?php bloginfo('name'); ?></a></h1>
+      <header>
+      	<div class='navbar-header'>
+	        <h1 class='navbar-brand'><a href="<?php bloginfo('wpurl'); ?>" title="<?php bloginfo('description'); ?>"><?php bloginfo('name'); ?></a></h1>
+        </div>
+        <!--<p class="navbar-text navbar-right"><?php bloginfo('description'); ?></p>-->
       </header>
 	</nav>
