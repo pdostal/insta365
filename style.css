@@ -26,12 +26,13 @@ h1.navbar-brand a { color: #fff; font-family: 'Allan', cursive; font-weight: bol
 
 #main .container { padding-top: 30px; }
 
+article.single { /*max-width: 400px;*/ }
 article.col-md-4 { margin-bottom: 30px; }
 article .title { border-top-right-radius: 5px; border-top-left-radius: 5px; background: rgba(0,0,0,0.75); display: block; width: 100%; font-size: 12pt; height: 18px; margin: 0px; padding: 0% 1.5% 1.5% 1.5%; }
 article .title,article .title a { color: #fff; font-family: 'Montserrat Alternates', sans-serif; }
 article .content { border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; background: rgba(0,0,0,0.75); position: relative; width: 100%; }
-article.col-md-4 .content { padding: 0px 1.5% 1.5% 1.5%; }
-article.single .content { padding: 0px 1.5% 20px 1.5%; }
+article.col-md-4 .content { padding: 0px 5px 5px 5px; }
+article.single .content { padding: 0px 5px 20px 5px; }
 article .content img:first-child { width: 100%; min-height: 275px; height: 100%; }
 article .tags { position: relative; top: -20px; width: 100%; color: #fff; padding: 0% 1.5%; font-family: 'Montserrat Alternates', sans-serif; }
 article .tags a { color: #fff; font-weight: bold; font-family: 'Montserrat Alternates', sans-serif; }
