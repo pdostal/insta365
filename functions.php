@@ -9,7 +9,7 @@
 
 	add_filter( 'post_thumbnail_html', 'my_post_image_html', 10, 3 );
 	function my_post_image_html( $html, $post_id, $post_image_id ) {
-		$html = '<a href="'.wp_get_attachment_url(get_post_thumbnail_id($post_id)).'" data-lightbox="lightbox" title="'.strip_tags(get_the_content()).'">'.$html.'</a>';
+		$html = '<a href="'.wp_get_attachment_url(get_post_thumbnail_id($post_id)).'" data-lightbox="lightbox" title="'.strip_tags(get_the_content()).'" itemprop="contentURL">'.$html.'</a>';
 		return $html;
 	}
 	function get_first_image($post) {
@@ -17,7 +17,7 @@
 		if (count($aPics[0]) > 0) {
 		   for ($i=0; $i < count($aPics[0]); $i++) {
 				preg_match('/<img.*src="(.*?)"/', $aPics[0][$i], $matches); 
-		        return '<a href="'.$matches[1].'" data-lightbox="lightbox" title="'.strip_tags(get_the_content()).'">'.$aPics[0][$i].'</a>';
+		        return '<a href="'.$matches[1].'" data-lightbox="lightbox" title="'.strip_tags(get_the_content()).'" itemprop="contentURL">'.$aPics[0][$i].'</a>';
 		   };
 		} else {
 			return '<img src="" alt="No image" />';
