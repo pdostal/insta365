@@ -23,4 +23,9 @@
 			return '<img src="" alt="No image" />';
 		}
 	}
+
+	add_action( 'wp_enqueue_script', 'load_jquery' );
+	function load_jquery() {
+		wp_enqueue_script( 'jquery' );
+	}
 ?>
