@@ -16,7 +16,8 @@
             $('#lightbox').attr('id','lightboxDISABLED');
             $('.lightbox').toggleClass('lightboxDISABLED');
             $('.lightbox').toggleClass('lightbox');
-            $('.text').toggleClass('textsize',true);
+            $('.textclose').remove();
+            $('.text').children('p').toggleClass('textsize',true);
         } else {
             $('#lightboxOverlayDISABLED').attr('id','lightboxOverlay');
             $('.lightboxOverlayDISABLED').toggleClass('lightboxOverlay');
@@ -26,31 +27,40 @@
             $('.lightboxDISABLED').toggleClass('lightbox');
             $('.lightboxDISABLED').toggleClass('lightboxDISABLED');
             $('#lightbox').css({'display':'none'});
-            $('.text').toggleClass('textsize',false);
+            $('.text').children('p').toggleClass('textsize',false);
         }            
     }
 })(jQuery);
 (function ($){
     $(function (){
         $('.text').mouseover(function() {
-            $(this).toggleClass('textmouse',true);
+            $(this).children('p').toggleClass('textmouse',true);
         });
         $('.text').mouseout(function() {
-            $(this).toggleClass('textmouse',false);
+            $(this).children('p').toggleClass('textmouse',false);
         });
         $('.text').click(function() {
-            if ($('.text').is('.textclicked')) {
-                $('.text').toggleClass('textclicked',false);
-                return false;
+            if ($('.text').children('p').is('.textclicked')) {
+                $('.text').children('p').toggleClass('textclicked',false);
+                $('.textclose').remove();
             } else {
-                $('.text').toggleClass('textclicked',true);
-                return false; 
+                $(this).children('p').toggleClass('textclicked',true);
+                if ( ( $(window).width() > 992 ) && ( $('.text').not('.textsingle') ) ) {
+                    $(this).parent().append('<a class="textclose" href="javascript:;">Close</a>');
+                }
+                return false;
             }
         });
         $(document).click(function(){
-            if ($('.text').is('.textclicked')) {
-                $('.text').toggleClass('textclicked',false);
-                return false;
+            if ($('.text').children('p').is('.textclicked')) {
+                $('.text').children('p').toggleClass('textclicked',false);
+                $('.textclose').remove();
+            }
+        });
+        $('.textclose').click(function(){
+            if ($('.text').children('p').is('.textclicked')) {
+                $('.text').children('p').toggleClass('textclicked',false);
+                $('.textclose').remove();
             }
         });
     });
