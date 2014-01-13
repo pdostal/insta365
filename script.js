@@ -51,6 +51,9 @@
                 return false;
             }
         });
+        $('.textlightbox').click(function() {
+            $(this).parent('p').parent('.text').parent('.content').children('a').click();
+        });
         $(document).click(function(){
             if ($('.text').children('p').is('.textclicked')) {
                 $('.text').children('p').toggleClass('textclicked',false);

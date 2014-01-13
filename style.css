@@ -26,7 +26,7 @@ h1.navbar-brand a { color: #fff; font-family: 'Allan', cursive; font-weight: bol
 
 #main .container { padding-top: 30px; }
 
-article.single { /*max-width: 400px;*/ }
+article.single { /*max-width: 400px;*/ margin-bottom: 25px; }
 article.col-md-4 { margin-bottom: 30px; }
 article .title { border-top-right-radius: 5px; border-top-left-radius: 5px; background: rgba(0,0,0,0.75); display: block; width: 100%; font-size: 12pt; height: 18px; margin: 0px; padding: 0% 1.5% 1.5% 1.5%; }
 article .title,article .title a { color: #fff; font-family: 'Montserrat Alternates', sans-serif; }
@@ -36,12 +36,17 @@ article.single .content { padding: 0px 5px 20px 5px; }
 article .content img:first-child { width: 100%; min-height: 275px; height: 100%; }
 article .tags { position: relative; top: -20px; width: 100%; color: #fff; padding: 0% 1.5%; font-family: 'Montserrat Alternates', sans-serif; }
 article .tags a { color: #fff; font-weight: bold; font-family: 'Montserrat Alternates', sans-serif; }
-article .text { position: absolute; bottom: 5px; width: 100%; height: 75%; padding-right: 10px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; text-align: center; font-weight: bold; font-family: 'Montserrat Alternates', sans-serif; }
+article .text { position: absolute; bottom: 5px; width: 100%; height: 100%; padding-right: 10px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; text-align: center; font-weight: bold; font-family: 'Montserrat Alternates', sans-serif; }
 article.single .text { bottom: 20px; }
 article .text p { color: rgba(255,255,255,1); background: rgba(0,0,0,0.5); background-clip: content-box; margin: 0px; position: absolute; bottom: 0px; padding-right: 10px; }
 article.col-md-4 .text p { color: rgba(0,0,0,0); background: rgba(0,0,0,0); }
 article.col-md-4 .textclose { position: absolute; bottom: -20px; right: 10px; color: #fff; background: rgba(0,0,0,0.75); border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; padding: 0px 5px; }
-article .single .textclose { display: none; }
+article.single .textclose { display: none; }
+article .text .textlightbox { position: absolute; background: rgba(0,0,0,0.75); border-top-color: rgba(0,0,0,0); border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; padding: 5px 5px 0px 5px; }
+article .text .textlightbox a { color: #fff; text-decoration: none; }
+article.col-md-4 .textlightbox { display: none; bottom: -25px; }
+article .single .textlightbox { display: block; bottom: -45px; }
+article.col-md-4 .text .textclicked .textlightbox,article.col-md-4 .text .textmouse .textlightbox,article.col-md-4 .text .textsize .textlightbox { display: block; }
 article.col-md-4 .text .textclicked,article.col-md-4 .text .textmouse,article.col-md-4 .text .textsize { color: rgba(255,255,255,1); background: rgba(0,0,0,0.5); background-clip: content-box; }
 
 footer { text-align: center; margin-bottom: 15px; font-family: 'Allan', cursive; }
