@@ -12,6 +12,7 @@ Wordpress theme for 365 project
 - [subtlepatterns.com](http://subtlepatterns.com/)
 
 ## Changelog
+- **0.4** Transparent description
 - **0.3** Text from post content
 - **0.2.1** Google fonts, README.md with credits and changelog
 - **0.2** Header, background, transparent border, image captions
