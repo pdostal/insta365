@@ -19,7 +19,7 @@
 		<link href='http://fonts.googleapis.com/css?family=Montserrat+Alternates' rel='stylesheet' type='text/css'>
 		<link href="<?php bloginfo('template_url'); ?>/lightbox.css" rel="stylesheet"/>
 		<script src="<?php bloginfo('template_url'); ?>/lightbox.min.js"></script>
-		<script src="<?php bloginfo('template_url'); ?>/disablelightbox.js"></script>
+		<script src="<?php bloginfo('template_url'); ?>/script.js"></script>
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css" media="all" />
 	</head>
 	<body>

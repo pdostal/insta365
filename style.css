@@ -38,7 +38,7 @@ article .tags { position: relative; top: -20px; width: 100%; color: #fff; paddin
 article .tags a { color: #fff; font-weight: bold; font-family: 'Montserrat Alternates', sans-serif; }
 article .text { color: rgba(255,255,255,1); background: rgba(0,0,0,0.5); background-clip: content-box; position: absolute; bottom: 5px; width: 100%; padding-right: 10px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; text-align: center; font-weight: bold; font-family: 'Montserrat Alternates', sans-serif; }
 article.col-md-4 .text { color: rgba(0,0,0,0); background: rgba(0,0,0,0); }
-article.col-md-4 .text:hover { color: rgba(255,255,255,1); background: rgba(0,0,0,0.5); background-clip: content-box; }
+article.col-md-4 .text.textclicked,article.col-md-4 .text.textmouse,article.col-md-4 .text.textsize { color: rgba(255,255,255,1); background: rgba(0,0,0,0.5); background-clip: content-box; }
 
 footer { text-align: center; margin-bottom: 15px; font-family: 'Allan', cursive; }
 footer a { color: #000; font-weight: bold; font-family: 'Allan', cursive; }
