@@ -18,6 +18,7 @@
             $('.lightbox').toggleClass('lightbox');
             $('.textclose').remove();
             $('.text').children('p').toggleClass('textsize',true);
+            $('.textlightbox').toggleClass('disablelightbox',true);
         } else {
             $('#lightboxOverlayDISABLED').attr('id','lightboxOverlay');
             $('.lightboxOverlayDISABLED').toggleClass('lightboxOverlay');
@@ -28,6 +29,7 @@
             $('.lightboxDISABLED').toggleClass('lightboxDISABLED');
             $('#lightbox').css({'display':'none'});
             $('.text').children('p').toggleClass('textsize',false);
+            $('.textlightbox').toggleClass('disablelightbox',false);
         }            
     }
 })(jQuery);
@@ -52,7 +54,9 @@
             }
         });
         $('.textlightbox').click(function() {
-            $(this).parent('p').parent('.text').parent('.content').children('a').click();
+            if ( $(window).width() > 992 ) {
+                $(this).parent('p').parent('.text').parent('.content').children('a').click();
+            }
         });
         $(document).click(function(){
             if ($('.text').children('p').is('.textclicked')) {
