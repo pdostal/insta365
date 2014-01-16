@@ -8,67 +8,68 @@
     $mobile_colorbox = function ()
     {
         if ( $(window).width() <= 992 ) {
-        	$('#lightboxOverlay').css({'display':'none'});
             $('#lightboxOverlay').attr('id','lightboxOverlayDISABLED');
             $('.lightboxOverlay').toggleClass('lightboxOverlayDISABLED');
             $('.lightboxOverlay').toggleClass('lightboxOverlay');
-            $('#lightbox').css({'display':'none'});
             $('#lightbox').attr('id','lightboxDISABLED');
             $('.lightbox').toggleClass('lightboxDISABLED');
             $('.lightbox').toggleClass('lightbox');
-            $('.textclose').remove();
-            $('.text').children('p').toggleClass('textsize',true);
-            $('.textlightbox').toggleClass('disablelightbox',true);
+            $('.textdesc').toggleClass('size',true);
+            $('.textclose').toggleClass('size',true);
+            $('.textlightbox').toggleClass('size',true);
+            $('.textdesc').toggleClass('clicked',false);
+            $('.textclose').toggleClass('clicked',false);
+            $('.textlightbox').toggleClass('clicked',false);
         } else {
             $('#lightboxOverlayDISABLED').attr('id','lightboxOverlay');
             $('.lightboxOverlayDISABLED').toggleClass('lightboxOverlay');
             $('.lightboxOverlayDISABLED').toggleClass('lightboxOverlayDISABLED');
-            $('#lightboxOverlay').css({'display':'none'});
             $('#lightboxDISABLED').attr('id','lightbox');
             $('.lightboxDISABLED').toggleClass('lightbox');
             $('.lightboxDISABLED').toggleClass('lightboxDISABLED');
-            $('#lightbox').css({'display':'none'});
-            $('.text').children('p').toggleClass('textsize',false);
-            $('.textlightbox').toggleClass('disablelightbox',false);
+            $('.textdesc').toggleClass('size',false);
+            $('.textclose').toggleClass('size',false);
+            $('.textlightbox').toggleClass('size',false);
         }            
     }
 })(jQuery);
 (function ($){
-    $(function (){
-        $('.text').mouseover(function() {
-            $(this).children('p').toggleClass('textmouse',true);
+    $(function () {
+        $('.desc').mouseover(function() {
+            $(this).children('.textdesc').toggleClass('mouse',true);
+            $(this).children('.textlightbox').toggleClass('mouse',true);
         });
-        $('.text').mouseout(function() {
-            $(this).children('p').toggleClass('textmouse',false);
+        $('.desc').mouseout(function() {
+            $(this).children('.textdesc').toggleClass('mouse',false);
+            $(this).children('.textlightbox').toggleClass('mouse',false);
         });
-        $('.text').click(function() {
-            if ($('.text').children('p').is('.textclicked')) {
-                $('.text').children('p').toggleClass('textclicked',false);
-                $('.textclose').remove();
+        $('.desc').click(function() {
+            if ($(this).children('.textdesc').is('.clicked')) {
+                $(this).children('.textdesc').toggleClass('clicked',false);
+                $(this).children('.textlightbox').toggleClass('clicked',false);
+                $(this).children('.textclose').toggleClass('clicked',false);
             } else {
-                $(this).children('p').toggleClass('textclicked',true);
-                if ( ( $(window).width() > 992 ) && ( $('.text').not('.textsingle') ) ) {
-                    $(this).parent().append('<a class="textclose" href="javascript:;">Close</a>');
-                }
+                $(this).children('.textdesc').toggleClass('clicked',true);
+                $(this).children('.textlightbox').toggleClass('clicked',true);
+                $(this).children('.textclose').toggleClass('clicked',true);
                 return false;
             }
         });
         $('.textlightbox').click(function() {
             if ( $(window).width() > 992 ) {
-                $(this).parent('p').parent('.text').parent('.content').children('a').click();
+                $(this).parent('.desc').parent('.content').children('.img').children('a').click();
             }
         });
         $(document).click(function(){
-            if ($('.text').children('p').is('.textclicked')) {
-                $('.text').children('p').toggleClass('textclicked',false);
-                $('.textclose').remove();
-            }
+            $('.textdesc').toggleClass('clicked',false);
+            $('.textlightbox').toggleClass('clicked',false);
+            $('.textclose').toggleClass('clicked',false);
         });
         $('.textclose').click(function(){
-            if ($('.text').children('p').is('.textclicked')) {
-                $('.text').children('p').toggleClass('textclicked',false);
-                $('.textclose').remove();
-            }
+            $(this).parent().children('.textdesc').toggleClass('clicked',false);
+            $(this).parent().children('.textlightbox').toggleClass('clicked',false);
+            $(this).parent().children('.textclose').toggleClass('clicked',false);
+            return false;
         });
     });
 })(jQuery);
