@@ -12,8 +12,8 @@
 		$html = '<a href="'.wp_get_attachment_url(get_post_thumbnail_id($post_id)).'" data-lightbox="lightbox" title="'.strip_tags(get_the_content()).'" itemprop="contentURL">'.$html.'</a>';
 		return $html;
 	}
-	function get_first_image($post) {
-		preg_match_all ('~<img [^\>]*\ />~', $post->post_content, $aPics);
+	function get_first_image($content) {
+		preg_match_all ('~<img [^\>]*\ />~', $content, $aPics);
 		if (count($aPics[0]) > 0) {
 		   for ($i=0; $i < count($aPics[0]); $i++) {
 				preg_match('/<img.*src="(.*?)"/', $aPics[0][$i], $matches); 
@@ -27,5 +27,22 @@
 	add_action( 'wp_enqueue_script', 'load_jquery' );
 	function load_jquery() {
 		wp_enqueue_script( 'jquery' );
+	}
+
+	add_action( 'wp_ajax_nopriv_get_post_title', 'get_post_title' );
+	add_action( 'wp_ajax_get_post_title', 'get_post_title' );
+	function get_post_title() {
+		query_posts('paged='.$_GET['page']);
+		while (have_posts()) {
+			the_post();
+			if ( has_post_thumbnail() ) {
+				$json[] = array('title' => get_the_time('Y-m-d'), 'image' => get_the_post_thumbnail(), 'content' => trim(strip_tags(get_the_content())));
+			} else {
+				$json[] = array('title' => get_the_time('Y-m-d'), 'image' => get_first_image(get_the_content()), 'content' => trim(strip_tags(get_the_content())));
+			}
+		}
+	    header( "Content-Type: application/json" );
+	    echo json_encode( $json );
+		exit;
 	}
 ?>

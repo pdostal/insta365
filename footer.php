@@ -1,4 +1,4 @@
-		<footer class="container">
+		<footer>
 			<span class="authorfooter">
 				&copy; <a itemprop="url" href="http://pdostal.cz/">Pavel Dostál</a>
 				(<a href="mailto:pdostal@pdostal.cz">pdostal@pdostal.cz</a>)

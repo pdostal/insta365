@@ -73,3 +73,32 @@
         });
     });
 })(jQuery);
+(function ($){
+    $(function () {
+        $('.nextpage').click(function(){
+            var myPage = $('.nextpage').attr('data-page');
+            $.get(ajax_request_url,{
+                'action' : 'get_post_title',
+                'page' : myPage
+            }, function( response ) {
+                $('.container').append('<div class="rov">');
+                $.each(response, function(index, element) {
+                    $('.rov:last').append('<article class="col-md-4">');
+                    $('.col-md-4:last').append('<h1 class="title"><span itemprop="datePublished" content="'+element.title+'">'+element.title+'</span></h1>');
+                    $('.col-md-4:last').append('<div class="content">');
+                    $('.content:last').append('<div class="img">'+element.image+'</div>');
+                    $('.content:last').append('<div class="desc">');
+                    $('.desc:last').append('<p class="textdesc" itemprop="description">'+element.content+'</p>');
+                    $('.desc:last').append('<span class="textlightbox"><a href="javascript:;">Lightbox</a></span>');
+                    $('.desc:last').append('<span class="textclose"><a href="javascript:;">Close</a></span>');
+                    $('.content:last').append('</div>');
+                    $('.col-md-4:last').append('</div>');
+                    $('.rov:last').append('</article>');
+                });
+                $('.container').append('</div>');
+            },  "json" );
+            $('.nextpage').attr('data-page',parseInt(myPage)+1);
+            return false;
+        });
+    });
+})(jQuery);
