@@ -18,6 +18,6 @@
 		<?php if ($i == 3) { ?></div><?php } ?>
 		<?php $i++; } } ?>
 	</div>
-	<div class="nextpage" data-page="2">Next</div>
+	<div class="nextpage" data-page="2"><a href="javascript:;">Next</a></div>
 </section>
 <?php include('footer.php'); ?>

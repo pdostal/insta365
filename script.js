@@ -77,6 +77,7 @@
     $(function () {
         $('.nextpage').click(function(){
             var myPage = $('.nextpage').attr('data-page');
+            var myGrid = 0;
             $.get(ajax_request_url,{
                 'action' : 'get_post_title',
                 'page' : myPage
@@ -94,8 +95,16 @@
                     $('.content:last').append('</div>');
                     $('.col-md-4:last').append('</div>');
                     $('.rov:last').append('</article>');
+                    myGrid = myGrid + 1;
+                    if (myGrid == 3) {
+                        $('.container:last').append('</div>');
+                        $('.container:last').append('<div class="rov">');
+                        myGrid = 0;
+                    }
                 });
-                $('.container').append('</div>');
+                if (myGrid != 0) {
+                    $('.container:last').append('</div>');
+                }
             },  "json" );
             $('.nextpage').attr('data-page',parseInt(myPage)+1);
             return false;

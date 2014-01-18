@@ -31,7 +31,7 @@ article .title { border-top-right-radius: 5px; border-top-left-radius: 5px; back
 article .content { border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; background: rgba(0,0,0,0.75); position: relative; width: 100%; padding: 0px 5px 5px 5px; }
 article .content img:first-child { width: 100%; min-height: 275px; height: 100%; }
 
-.nextpage { width: 65px; color: #fff; background: rgba(0,0,0,0.75); padding: 0px 2.5px; border-radius: 5px; margin: 0px auto; text-align: center; font-weight: bold; font-family: 'Montserrat Alternates', sans-serif; position: relative; top: -15px; }
+.nextpage a { width: 65px; color: #fff; background: rgba(0,0,0,0.75); padding: 0px 2.5px; border-radius: 5px; margin: 0px auto; text-align: center; font-weight: bold; font-family: 'Montserrat Alternates', sans-serif; position: relative; top: -15px; display: block; }
 
 article .desc { position: absolute; bottom: 5px; width: 100%; height: 100%; padding-right: 10px; border-radius: 5px; text-align: center; font-weight: bold; font-family: 'Montserrat Alternates', sans-serif; }
 article .textdesc { display: none; color: rgba(255,255,255,1); background: rgba(0,0,0,0.5); background-clip: content-box; margin: 0px; position: absolute; bottom: 0px; padding-right: 10px; }
