@@ -1,9 +1,9 @@
 module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    uglify: { dist: { files: { 'script.min.js': ['script.js'] } } },
+    uglify: { dist: { files: { 'script.min.js': ['script.js'] }, options: { sourceMap: true } } },
     cssmin: { dist: { files: { 'style.min.css': ['style.css'] } } },
-    htmlmin: { dist: { files: { 'index.min.html': ['index.html'] } } }
+    htmlmin: { dist: { files: { 'index.min.html': ['index.html'] }, options: { removeComments: true, removeCommentsFromCDATA: true, collapseWhitespace: true } } }
   });
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
