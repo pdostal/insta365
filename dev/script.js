@@ -1,12 +1,16 @@
 (function ($){
     $(function (){
-        $mobile_colorbox();
+        $(window).ready(function () {
+            $mobile_colorbox()
+        });
         $(window).resize(function () {
             $mobile_colorbox()
         });
+        $('.nextpage').click(function () {
+            $mobile_colorbox()
+        });
     });
-    $mobile_colorbox = function ()
-    {
+    $mobile_colorbox = function () {
         if ( $(window).width() <= 992 ) {
             $('#lightboxOverlay').attr('id','lightboxOverlayDISABLED');
             $('.lightboxOverlay').toggleClass('lightboxOverlayDISABLED');
@@ -30,11 +34,7 @@
             $('.textdesc').toggleClass('size',false);
             $('.textclose').toggleClass('size',false);
             $('.textlightbox').toggleClass('size',false);
-        }            
-    }
-})(jQuery);
-(function ($){
-    $(function () {
+        }
         $('.desc').mouseover(function() {
             $(this).children('.textdesc').toggleClass('mouse',true);
             $(this).children('.textlightbox').toggleClass('mouse',true);
@@ -71,7 +71,7 @@
             $(this).parent().children('.textclose').toggleClass('clicked',false);
             return false;
         });
-    });
+    }
 })(jQuery);
 (function ($){
     $(function () {
@@ -107,7 +107,6 @@
                 }
             },  "json" );
             $('.nextpage').attr('data-page',parseInt(myPage)+1);
-            return false;
         });
     });
 })(jQuery);
