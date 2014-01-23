@@ -1,14 +1,12 @@
 module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('./package.json'),
-    uglify: { dist: { files: { './script.min.js': ['script.js'] }, options: { sourceMap: true } } },
-    cssmin: { dist: { files: { './style.min.css': ['style.css'] } } },
-    htmlmin: { dist: { files: { './index.min.html': ['index.html'] }, options: { removeComments: true, removeCommentsFromCDATA: true, collapseWhitespace: true } } },
-    copy: { dist: { files: [ { dest: './README.txt', src: ['README.md'] } ] } }
+    uglify: { dist: { files: { './dist/main.js': ['./dev/*.js'] } } },
+    cssmin: { dist: { files: { './dist/main.css': ['./dev/*.css'] }, options: { keepSpecialComments: '0' } } },
+    copy: { dist: { files: [ { expand: true, dest: './dist/', src: ['./*.png', './*.php', './style.css'], cwd: './dev/' } ] } }
   });
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.registerTask('default', ['uglify', 'cssmin', 'htmlmin', 'copy']);
+  grunt.registerTask('default', ['uglify', 'cssmin', 'copy']);
 };
