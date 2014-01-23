@@ -16,10 +16,10 @@
 		<link href='http://fonts.googleapis.com/css?family=Allan' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Pompiere' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Montserrat+Alternates' rel='stylesheet' type='text/css'>
-		<link href="<?php bloginfo('template_url'); ?>/ext/bootstrap.css" rel="stylesheet">
-		<script src="<?php bloginfo('template_url'); ?>/ext/bootstrap.js"></script>
+		<link href="<?php bloginfo('template_url'); ?>/ext/bootstrap.min.css" rel="stylesheet">
+		<script src="<?php bloginfo('template_url'); ?>/ext/bootstrap.min.js"></script>
 		<link href="<?php bloginfo('template_url'); ?>/ext/lightbox.css" rel="stylesheet"/>
-		<script src="<?php bloginfo('template_url'); ?>/ext/lightbox.js"></script>
+		<script src="<?php bloginfo('template_url'); ?>/ext/lightbox.min.js"></script>
 		<script src="<?php bloginfo('template_url'); ?>/script.js"></script>
 		<link href="<?php bloginfo('template_url'); ?>/style.css" media="all" rel="stylesheet" />
 	</head>
