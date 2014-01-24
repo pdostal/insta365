@@ -20,8 +20,8 @@
 		<script src="<?php bloginfo('template_url'); ?>/ext/bootstrap.min.js"></script>
 		<link href="<?php bloginfo('template_url'); ?>/ext/lightbox.css" rel="stylesheet"/>
 		<script src="<?php bloginfo('template_url'); ?>/ext/lightbox.min.js"></script>
-		<script src="<?php bloginfo('template_url'); ?>/script.js"></script>
-		<link href="<?php bloginfo('template_url'); ?>/style.css" media="all" rel="stylesheet" />
+		<script src="<?php bloginfo('template_url'); ?>/main.js"></script>
+		<link href="<?php bloginfo('template_url'); ?>/main.css" media="all" rel="stylesheet" />
 	</head>
 	<body>
 	<nav id='header' class='navbar navbar-default navbar-fixed-top navbar-inner' role='navigation'>
