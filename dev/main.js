@@ -1,40 +1,5 @@
 (function ($){
     $(function (){
-        $(window).ready(function () {
-            $mobile_colorbox()
-        });
-        $(window).resize(function () {
-            $mobile_colorbox()
-        });
-        $('.nextpage').click(function () {
-            $mobile_colorbox()
-        });
-    });
-    $mobile_colorbox = function () {
-        if ( $(window).width() <= 992 ) {
-            $('#lightboxOverlay').attr('id','lightboxOverlayDISABLED');
-            $('.lightboxOverlay').toggleClass('lightboxOverlayDISABLED');
-            $('.lightboxOverlay').toggleClass('lightboxOverlay');
-            $('#lightbox').attr('id','lightboxDISABLED');
-            $('.lightbox').toggleClass('lightboxDISABLED');
-            $('.lightbox').toggleClass('lightbox');
-            $('.textdesc').toggleClass('size',true);
-            $('.textclose').toggleClass('size',true);
-            $('.textlightbox').toggleClass('size',true);
-            $('.textdesc').toggleClass('clicked',false);
-            $('.textclose').toggleClass('clicked',false);
-            $('.textlightbox').toggleClass('clicked',false);
-        } else {
-            $('#lightboxOverlayDISABLED').attr('id','lightboxOverlay');
-            $('.lightboxOverlayDISABLED').toggleClass('lightboxOverlay');
-            $('.lightboxOverlayDISABLED').toggleClass('lightboxOverlayDISABLED');
-            $('#lightboxDISABLED').attr('id','lightbox');
-            $('.lightboxDISABLED').toggleClass('lightbox');
-            $('.lightboxDISABLED').toggleClass('lightboxDISABLED');
-            $('.textdesc').toggleClass('size',false);
-            $('.textclose').toggleClass('size',false);
-            $('.textlightbox').toggleClass('size',false);
-        }
         $('.desc').mouseover(function() {
             $(this).children('.textdesc').toggleClass('mouse',true);
             $(this).children('.textlightbox').toggleClass('mouse',true);
@@ -71,10 +36,6 @@
             $(this).parent().children('.textclose').toggleClass('clicked',false);
             return false;
         });
-    }
-})(jQuery);
-(function ($){
-    $(function () {
         $('.nextpage').click(function(){
             var myPage = $('.nextpage').attr('data-page');
             var myGrid = 0;
@@ -108,5 +69,40 @@
             },  "json" );
             $('.nextpage').attr('data-page',parseInt(myPage)+1);
         });
+        $(window).ready(function () {
+            $change_size()
+        });
+        $(window).resize(function () {
+            $change_size()
+        });
+        $('.nextpage').click(function () {
+            $change_size()
+        });
     });
+    $change_size = function () {
+        if ( $(window).width() <= 992 ) {
+            $('#lightboxOverlay').attr('id','lightboxOverlayDISABLED');
+            $('.lightboxOverlay').toggleClass('lightboxOverlayDISABLED');
+            $('.lightboxOverlay').toggleClass('lightboxOverlay');
+            $('#lightbox').attr('id','lightboxDISABLED');
+            $('.lightbox').toggleClass('lightboxDISABLED');
+            $('.lightbox').toggleClass('lightbox');
+            $('.textdesc').toggleClass('size',true);
+            $('.textclose').toggleClass('size',true);
+            $('.textlightbox').toggleClass('size',true);
+            $('.textdesc').toggleClass('clicked',false);
+            $('.textclose').toggleClass('clicked',false);
+            $('.textlightbox').toggleClass('clicked',false);
+        } else {
+            $('#lightboxOverlayDISABLED').attr('id','lightboxOverlay');
+            $('.lightboxOverlayDISABLED').toggleClass('lightboxOverlay');
+            $('.lightboxOverlayDISABLED').toggleClass('lightboxOverlayDISABLED');
+            $('#lightboxDISABLED').attr('id','lightbox');
+            $('.lightboxDISABLED').toggleClass('lightbox');
+            $('.lightboxDISABLED').toggleClass('lightboxDISABLED');
+            $('.textdesc').toggleClass('size',false);
+            $('.textclose').toggleClass('size',false);
+            $('.textlightbox').toggleClass('size',false);
+        }
+    }
 })(jQuery);
