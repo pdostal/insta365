@@ -1,40 +1,14 @@
 (function ($){
-    $(function (){
-        $('.desc').mouseover(function() {
-            $(this).children('.textdesc').toggleClass('mouse',true);
-            $(this).children('.textlightbox').toggleClass('mouse',true);
+    $(function () {
+        $(window).ready(function () {
+            $change_size()
+            $load_events()
         });
-        $('.desc').mouseout(function() {
-            $(this).children('.textdesc').toggleClass('mouse',false);
-            $(this).children('.textlightbox').toggleClass('mouse',false);
+        $(window).resize(function () {
+            $change_size()
         });
-        $('.desc').click(function() {
-            if ($(this).children('.textdesc').is('.clicked')) {
-                $(this).children('.textdesc').toggleClass('clicked',false);
-                $(this).children('.textlightbox').toggleClass('clicked',false);
-                $(this).children('.textclose').toggleClass('clicked',false);
-            } else {
-                $(this).children('.textdesc').toggleClass('clicked',true);
-                $(this).children('.textlightbox').toggleClass('clicked',true);
-                $(this).children('.textclose').toggleClass('clicked',true);
-                return false;
-            }
-        });
-        $('.textlightbox').click(function() {
-            if ( $(window).width() > 992 ) {
-                $(this).parent('.desc').parent('.content').children('.img').children('a').click();
-            }
-        });
-        $(document).click(function(){
-            $('.textdesc').toggleClass('clicked',false);
-            $('.textlightbox').toggleClass('clicked',false);
-            $('.textclose').toggleClass('clicked',false);
-        });
-        $('.textclose').click(function(){
-            $(this).parent().children('.textdesc').toggleClass('clicked',false);
-            $(this).parent().children('.textlightbox').toggleClass('clicked',false);
-            $(this).parent().children('.textclose').toggleClass('clicked',false);
-            return false;
+        $('.nextpage').click(function () {
+            $change_size()
         });
         $('.nextpage').click(function(){
             var myPage = $('.nextpage').attr('data-page');
@@ -69,16 +43,45 @@
             },  "json" );
             $('.nextpage').attr('data-page',parseInt(myPage)+1);
         });
-        $(window).ready(function () {
-            $change_size()
-        });
-        $(window).resize(function () {
-            $change_size()
-        });
-        $('.nextpage').click(function () {
-            $change_size()
-        });
     });
+    $load_events = function () {
+        $(document).on('mouseover', '.desc', function() {
+            $(this).children('.textdesc').toggleClass('mouse',true);
+            $(this).children('.textlightbox').toggleClass('mouse',true);
+        });
+        $(document).on('mouseout', '.desc', function() {
+            $(this).children('.textdesc').toggleClass('mouse',false);
+            $(this).children('.textlightbox').toggleClass('mouse',false);
+        });
+        $(document).on('click', '.desc', function() {
+            if ($(this).children('.textdesc').is('.clicked')) {
+                $(this).children('.textdesc').toggleClass('clicked',false);
+                $(this).children('.textlightbox').toggleClass('clicked',false);
+                $(this).children('.textclose').toggleClass('clicked',false);
+            } else {
+                $(this).children('.textdesc').toggleClass('clicked',true);
+                $(this).children('.textlightbox').toggleClass('clicked',true);
+                $(this).children('.textclose').toggleClass('clicked',true);
+                return false;
+            }
+        });
+        $(document).on('click', '.textlightbox', function() {
+            if ( $(window).width() > 992 ) {
+                $(this).parent('.desc').parent('.content').children('.img').children('a').click();
+            }
+        });
+        $(document).on('click', function() {
+            $('.textdesc').toggleClass('clicked',false);
+            $('.textlightbox').toggleClass('clicked',false);
+            $('.textclose').toggleClass('clicked',false);
+        });
+        $(document).on('click', '.textclose', function() {
+            $(this).parent().children('.textdesc').toggleClass('clicked',false);
+            $(this).parent().children('.textlightbox').toggleClass('clicked',false);
+            $(this).parent().children('.textclose').toggleClass('clicked',false);
+            return false;
+        });
+    }
     $change_size = function () {
         if ( $(window).width() <= 992 ) {
             $('#lightboxOverlay').attr('id','lightboxOverlayDISABLED');
