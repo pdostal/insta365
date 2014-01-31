@@ -1,12 +1,16 @@
 module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('./package.json'),
-    uglify: { dist: { files: { './dist/main.js': ['./dev/*.js'] } } },
-    cssmin: { dist: { files: { './dist/main.css': ['./dev/*.css'] }, options: { keepSpecialComments: '0' } } },
-    copy: { dist: { files: [ { expand: true, dest: './dist/', src: ['./*.png', './*.php', './ext/*', 'style.css'], cwd: './dev/' } ] } }
+    uglify: { dist: { files: { './insta365/main.js': ['./*.js'] } } },
+    cssmin: { dist: { files: { './insta365/main.css': ['./*.css'] } } },
+    copy: { dist: { files: [ { expand: true, dest: './insta365/', src: ['./*.png', './*.php', './ext/*', 'style.css'], cwd: './' } ] } },
+    compress: { dist: { files: [ { src: ['./insta365/**'], dest: './' } ], options: { archive: 'insta365.zip' } } },
+    remove: { dist: { dirList: ['./insta365/'], options: { trace: false } } }
   });
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.registerTask('default', ['uglify', 'cssmin', 'copy']);
+  grunt.loadNpmTasks('grunt-contrib-compress');
+  grunt.loadNpmTasks('grunt-remove');
+  grunt.registerTask('default', ['uglify', 'cssmin', 'copy', 'compress', 'remove']);
 };
