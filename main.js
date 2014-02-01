@@ -10,7 +10,46 @@
         $('.nextpage').click(function () {
             $change_size()
         });
-        $('.nextpage').click(function(){
+    });
+    $load_events = function () {
+        $(document).on('mouseover', '.desc', function() {
+            $(this).children('.textdesc').toggleClass('mouse',true);
+            $(this).children('.textlightbox').toggleClass('mouse',true);
+        });
+        $(document).on('mouseout', '.desc', function() {
+            $(this).children('.textdesc').toggleClass('mouse',false);
+            $(this).children('.textlightbox').toggleClass('mouse',false);
+        });
+        $(document).on('click tap touchstart', '.desc', function() {
+            if ($(this).children('.textdesc').is('.clicked')) {
+                $(this).children('.textdesc').toggleClass('clicked',false);
+                $(this).children('.textlightbox').toggleClass('clicked',false);
+                $(this).children('.textclose').toggleClass('clicked',false);
+            } else {
+                $(this).children('.textdesc').toggleClass('clicked',true);
+                $(this).children('.textlightbox').toggleClass('clicked',true);
+                $(this).children('.textclose').toggleClass('clicked',true);
+                return false;
+            }
+        });
+        $(document).on('click tap touchstart', '.textlightbox', function() {
+            if ( $(window).width() > 992 ) {
+                $(this).parent('.desc').parent('.content').children('.img').children('a').click();
+                return false;
+            }
+        });
+        $(document).on('click tap touchstart', function() {
+            $('.textdesc').toggleClass('clicked',false);
+            $('.textlightbox').toggleClass('clicked',false);
+            $('.textclose').toggleClass('clicked',false);
+        });
+        $(document).on('click tap touchstart', '.textclose', function() {
+            $(this).parent().children('.textdesc').toggleClass('clicked',false);
+            $(this).parent().children('.textlightbox').toggleClass('clicked',false);
+            $(this).parent().children('.textclose').toggleClass('clicked',false);
+            return false;
+        });
+        $(document).on('click tap touchstart', '.nextpage', function() {
             var myPage = $('.nextpage').attr('data-page');
             var myGrid = 0;
             $.get(ajax_request_url,{
@@ -42,44 +81,6 @@
                 }
             },  "json" );
             $('.nextpage').attr('data-page',parseInt(myPage)+1);
-        });
-    });
-    $load_events = function () {
-        $(document).on('mouseover', '.desc', function() {
-            $(this).children('.textdesc').toggleClass('mouse',true);
-            $(this).children('.textlightbox').toggleClass('mouse',true);
-        });
-        $(document).on('mouseout', '.desc', function() {
-            $(this).children('.textdesc').toggleClass('mouse',false);
-            $(this).children('.textlightbox').toggleClass('mouse',false);
-        });
-        $(document).on('click', '.desc', function() {
-            if ($(this).children('.textdesc').is('.clicked')) {
-                $(this).children('.textdesc').toggleClass('clicked',false);
-                $(this).children('.textlightbox').toggleClass('clicked',false);
-                $(this).children('.textclose').toggleClass('clicked',false);
-            } else {
-                $(this).children('.textdesc').toggleClass('clicked',true);
-                $(this).children('.textlightbox').toggleClass('clicked',true);
-                $(this).children('.textclose').toggleClass('clicked',true);
-                return false;
-            }
-        });
-        $(document).on('click', '.textlightbox', function() {
-            if ( $(window).width() > 992 ) {
-                $(this).parent('.desc').parent('.content').children('.img').children('a').click();
-            }
-        });
-        $(document).on('click', function() {
-            $('.textdesc').toggleClass('clicked',false);
-            $('.textlightbox').toggleClass('clicked',false);
-            $('.textclose').toggleClass('clicked',false);
-        });
-        $(document).on('click', '.textclose', function() {
-            $(this).parent().children('.textdesc').toggleClass('clicked',false);
-            $(this).parent().children('.textlightbox').toggleClass('clicked',false);
-            $(this).parent().children('.textclose').toggleClass('clicked',false);
-            return false;
         });
     }
     $change_size = function () {
